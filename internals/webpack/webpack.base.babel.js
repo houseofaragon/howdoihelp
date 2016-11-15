@@ -27,6 +27,10 @@ module.exports = (options) => ({
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
     }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      loaders: ['style', 'css', 'sass']
+    }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {
@@ -40,7 +44,7 @@ module.exports = (options) => ({
       loader: 'html-loader',
     }, {
       test: /\.json$/,
-      loader: 'json-loader',
+      loader: 'json',
     }, {
       test: /\.(mp4|webm)$/,
       loader: 'url-loader?limit=10000',
