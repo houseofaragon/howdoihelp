@@ -58,6 +58,7 @@ class CategoryList extends React.Component {
             <a href='https://docs.google.com/forms/d/e/1FAIpQLScONOA_hSg3cPo-rkFruIEfId4K19cHZ5j9kLM-9Rx_8MLFnQ/viewform' id='add-organization'  target="_blank"> I Want to add a way to help!</a>
           </div>
         </div>
+        <button className={(this.state.visible ? "visible " : "")} id='close' onClick={this.hide.bind(this)}> X </button>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
           <SubCategoryList />
           <div id='category-list'>
