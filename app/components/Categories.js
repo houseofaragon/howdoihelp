@@ -1,6 +1,5 @@
 import React from 'react'
 import CategoryList from 'components/CategoryList'
-import CategoryMenu from 'components/CategoryMenu'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -16,8 +15,7 @@ class Categories extends React.Component {
   }
 
   handleSiteLinkClick (e) {
-    console.log(e.target.getAttribute('data-tag'))
-    this.props.filterCategoriesList(this.props.list, e.target.getAttribute('data-tag'))
+    this.props.filterCategoriesList(this.props.list, e)
   }
 
   render () {
@@ -26,8 +24,7 @@ class Categories extends React.Component {
     else categoryList = this.props.list || {}
     return (
       <div>
-        <CategoryMenu onMenuClick={this.handleSiteLinkClick} />
-        <CategoryList categoryList={categoryList}/>
+        <CategoryList onMenuClick={this.handleSiteLinkClick} categoryList={categoryList} ref="right" alignment="right" />
       </div>
     )
   }

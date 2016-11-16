@@ -76,9 +76,16 @@
 }
 
 .landing-side-grid{
+  right:-40vw;
+}
+
+.landing-side-grid.visible{
   right: 0;
-  float: right;
-  width: 50vw;
+  transition: right ease 250ms;
+  display: block;
+  z-index: 100;
+  width: 40vw;
+  right: 0;
   height: 100%;
   clear: both;
   padding: 0 $padding * 3;
