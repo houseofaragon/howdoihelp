@@ -8,11 +8,12 @@
   position: fixed;
 
   & h1.landing-logo {
-      color: $light-pink;
-      font-size: 1.5em;
-      position: absolute;
-      top: $padding * 2;
-      left: $padding * 2;
+    color: $light-pink;
+    font-size: 1.5em;
+    position: absolute;
+    top: $padding * 2;
+    left: $padding * 2;
+    font-weight: 700;
   }
 
   & #landing-text{
@@ -28,14 +29,24 @@
       color: $light-pink;
       border: 3px solid $light-pink;
       position: absolute;
-      top: 60vh;
       padding: $padding;
+      display: block;
+      position: absolute;
+      margin-top: $padding*20;
+
+      &:hover{
+        color: $red;
+        border: 3px solid $red;
+        transition: color 250ms, border 250ms;
+      }
     }
     & a{
+      font-weight: 400;
       display: inline-block;
       color: $light-pink;
       padding: $padding 0 5px 0;
       margin: $padding $padding * 2 0 0;
+      letter-spacing: 1px;
 
       &:hover{
         cursor: pointer;
@@ -47,7 +58,7 @@
 
     & h1.landing-header {
       color: $white;
-      font-size: 2.2em;
+      font-size: 3em;
     }
 
     & h2{
@@ -98,7 +109,7 @@
       }
 
       & .category-description{
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Work Sans', sans-serif;
         font-weight: 400;
         letter-spacing: 0.5px;
       }
