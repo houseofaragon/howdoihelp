@@ -3,23 +3,20 @@ import { Link } from 'react-router'
 import SubCategoryList from 'components/SubCategoryList'
 
 class CategoryList extends React.Component {
-
   componentWillMount() {
-    this.setState({ visible: false });
-  }
-  show () {
-    this.setState({ visible: true });
-    //document.addEventListener("click", this.hide.bind(this));
+    this.setState({ visible: false});
   }
 
-  hide () {
-    document.removeEventListener("click", this.hide.bind(this));
-    this.setState({ visible: !this.state.visible });
-  }
+  show () { this.setState({ visible: true }) }
 
-  handleMenuClick (e) {
-    this.props.onMenuClick(e.target.getAttribute('data-tag'))
+
+  handleCategoryClick (e) {
+    this.props.onCategoryClick(e.target.getAttribute('data-tag'))
     this.show()
+  }
+
+  handleSubCategoryClick (e) {
+    this.props.onSubCategoryClick(e)
   }
 
   render () {
@@ -44,22 +41,28 @@ class CategoryList extends React.Component {
     return (
       <div>
         <div className='landing'>
-          <h1 className='landing-logo'> How do I help?</h1>
           <div id='landing-text'>
-            <h1 className='landing-header'>How do I help?</h1>
-            <h2>Volunteer. Assemble. Give. Get Active.</h2>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='all'> All</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='climate change'> Climate Change</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='education'> Education</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='equality'> Equality</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='government'> Government</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='healthcare'> Health Care</a>
-            <a onClick={this.handleMenuClick.bind(this)} data-tag='International affairs'> International Affairs</a>
-            <a href='https://docs.google.com/forms/d/e/1FAIpQLScONOA_hSg3cPo-rkFruIEfId4K19cHZ5j9kLM-9Rx_8MLFnQ/viewform' id='add-organization'  target="_blank"> I Want to add a way to help!</a>
+            <div id='header'>
+              <div id="logo-img" />
+              <h1 className='landing-header'>howdoihelp<span id="underline"></span>?</h1>
+            </div>
+            <hr id='shadow'/>
+            <div id='links-box'>
+              <div id='links'>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='climate change'> Climate Change</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='education'> Education</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='equality'> Equality</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='government'> Government</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='healthcare'> Health Care</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='International affairs'> International Affairs</a>
+                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='all'> All</a>
+              </div>
+            </div>
           </div>
+          <a href='https://docs.google.com/forms/d/e/1FAIpQLScONOA_hSg3cPo-rkFruIEfId4K19cHZ5j9kLM-9Rx_8MLFnQ/viewform' id='add-organization'  target="_blank"> submit a way to help</a>
         </div>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
-          <SubCategoryList />
+          <SubCategoryList onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>
           <div id='category-list'>
             {categoryList}
           </div>

@@ -1,18 +1,13 @@
-.green {
-  background: $green;
-}
+.blue-bg  { background: $blue; }
+.red      { background: $red; }
+.pink { color: $pink }
+.pink-bg { background: $pink }
+.teal { color: $teal }
+.teal-bg { background: $teal }
+.green { color: $green }
+.green-bg { background: $green; }
 
-.blue{
-  background: $blue;
-}
-
-.red{
-  background: $red;
-}
-
-.grey{
-  background: $grey;
-}
+.grey{ background: $grey; }
 
 .lightGrey{
   background-color: $light-grey;
@@ -48,7 +43,12 @@ a{
   color: $purple;
   text-decoration: none;
   font-size: 1em;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
+
 
 .container{
   background: $light-pink;
