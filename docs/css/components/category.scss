@@ -1,3 +1,22 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+& #add-organization{
+  border-radius: 10px;
+  color: $white;
+  padding: $padding;
+  display: block;
+  position: absolute;
+  top: 90vh;
+  left: $padding * 4;
+
+  &:hover{
+    color: $teal;
+    transition: color 250ms;
+  }
+}
+
 .landing {
   background: $purple; /* fallback for old browsers */
   height: 100vh;
@@ -7,63 +26,97 @@
   overflow-x: hidden;
   position: fixed;
 
-  & h1.landing-logo {
-    color: $light-pink;
-    font-size: 1.5em;
-    position: absolute;
-    top: $padding * 2;
-    left: $padding * 2;
-    font-weight: 700;
-  }
-
   & #landing-text{
     position: absolute;
-    left: 20px;
-    top: 35%;
+    left: $padding * 4;
+    top: 40vh;
     color: $white;
     z-index: 1;
-    width: 45vw;
+    width: 100vw;
 
-    & #add-organization{
-      background-color: transparent;
-      color: $light-pink;
-      border: 3px solid $light-pink;
+    /*
+      hr#shadow{
+      z-index: 100;
+      border: none;
+      left: 375px;
+      top: 85px;
       position: absolute;
-      padding: $padding;
-      display: block;
+      width: 300px;
+      height: auto;
+      -webkit-box-shadow: inset 13px 20px 57px 0px rgba(104,34,139,1);
+      -moz-box-shadow: inset 13px 20px 57px 0px rgba(104,34,139,1);
+      box-shadow: inset 0px -20px 57px 0px rgba(104,34,139,1);
+    }
+    */
+
+    & #links-box {
       position: absolute;
-      margin-top: $padding*20;
+      left: 385px;
+      width: 290px;
+      height: 300px;
+      top: -350px;
+      overflow: auto;
+      background: transparent;
+      position: absolute;
+      padding-top: 200px;
+      padding-bottom: 500px;
 
-      &:hover{
-        color: $red;
-        border: 3px solid $red;
-        transition: color 250ms, border 250ms;
+      & #links {
+        overflow-y: hidden;
+        padding-bottom: 20px;
+        text-align: left;
+        padding-top: 190px;
+
+        & .active{
+          color: $white;
+        }
+        & a{
+          width: 300px;
+          z-index: 10;
+          font-weight: 700;
+          display: block;
+          font-size: 2.3em;
+          color: $light-purple;
+          letter-spacing: 1px;
+
+          &:hover{
+            cursor: pointer;
+            color: $white;
+          }
+        }
       }
-    }
-    & a{
-      font-weight: 400;
-      display: inline-block;
-      color: $light-pink;
-      padding: $padding 0 5px 0;
-      margin: $padding $padding * 2 0 0;
-      letter-spacing: 1px;
 
-      &:hover{
-        cursor: pointer;
-        color: $red;
-        border-bottom: 3px solid $red;
-        transition: color 250ms, border-bottom 250ms;
+      ::-webkit-scrollbar {
+          display: none;
       }
+
     }
 
-    & h1.landing-header {
-      color: $white;
-      font-size: 3em;
-    }
+    & #header {
+      height: 120px;
+      position: relative;
 
-    & h2{
-      font-size: 1.8em;
-      color: lightblue;
+      & div#logo-img {
+        width: 144px;
+        height: 144px;
+        display:inline-block;
+        border: none;
+        border-radius: 50%;
+        z-index: 1000;
+        background-image: url('images/logo.png')
+      }
+
+      & h1.landing-header {
+        position: absolute;
+        color: $teal;
+        font-size: 2.4em;
+        font-weight: 900;
+        vertical-align: middle;
+        line-height: 120px;
+        display: inline-block;
+        margin-left: $padding;
+
+      }
     }
   }
 
@@ -77,6 +130,8 @@
 
 .landing-side-grid{
   right:-40vw;
+  transition: right ease 250ms;
+
 }
 
 .landing-side-grid.visible{
@@ -85,7 +140,6 @@
   display: block;
   z-index: 100;
   width: 40vw;
-  right: 0;
   height: 100%;
   clear: both;
   padding: 0 $padding * 3;
@@ -96,29 +150,46 @@
 
   & #category-list{
     margin-top: $padding * 14;
+    padding-bottom: $padding * 6;
   }
 
-  & .category-header{
-    color: $dark-blue;
-    border-bottom: 3px solid $dark-blue;
+  & hr{
+    border: 2px solid $teal;
     text-transform: uppercase;
-    margin: -$padding * 4 auto $padding * 2;
+    margin-top: -$padding * 3;
     position: fixed;
     width: 100%;
   }
 
   & .category-div {
+      margin-bottom: $padding * 3;
+
+      &:after {
+        border-left: 3px solid $teal;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: -10px;
+        width: 0;
+        height: 0;
+        border-color: transparent transparent transparent $purple;
+        border-style: solid;
+        border-width: 10px;
+      }
       & h4{
         display: inline-block;
         padding: $padding 0 5px 0;
-        margin: $padding 0 $padding 0;
+        margin: $padding 0 0 0;
         max-width: 30vw;
+        text-transform: uppercase;
       }
 
       & .category-description{
         font-family: 'Work Sans', sans-serif;
         font-weight: 400;
         letter-spacing: 0.5px;
+        font-size: 1em;
       }
 
       & #message {
@@ -126,44 +197,51 @@
         margin: 30px auto;
         color: $blue;
       }
-
-      & .action {
-        width: 8px;
-        height: 8px;
-        display: inline-block;
-        border-radius: 50%;
-        margin-right: $padding/2;
-        margin-top: 3px;
-
-        &#donate{
-          background-color: $green;
+      & h6#donate{
           color: $green;
-        }
+      }
+      & h6#volunteer{
+          color: $pink;
+      }
 
-        &#online activism {
-          background-color: $blue;
-          color: #2196f3;
-        }
+      & .category-links {
+        border-radius: 10px;
+        display: inline-block;
+        border: none;
+        border-radius: 15px;
+        margin-top: $padding * 1.5;
+        color: $light-purple;
+        & a {
+          font-size: 0.7em;
+          padding: $padding;
+          background-color: $light-grey;
+          color: $purple;
+          border-radius: 12px;
+          margin-right: $padding;
+          line-height: 2em;
 
-        &#in-person, h6{
-          background-color: $yellow;
-          color: $yellow;
+          &:hover{
+            background-color: $purple;
+            color: $white;
+            transition: color 250ms, background-color 250ms;
+          }
+          & span{
+            font-size: 1.8em;
+            vertical-align: middle;
+            &#donate { color: $green; }
+            &#online { color: $blue; }
+            &#volunteer { color: $pink; }
+          }
         }
       }
-    &:hover{
-      color: $blue;
-      cursor: pointer;
-    }
   }
-
 
   & #sub-category-list {
     position: fixed;
-    width: 100%;
+    width: 35vw;
     background: $white;
-    height: $padding * 9.5;
-    padding-top: $padding * 3;
-
+    height: $padding * 7;
+    padding-top: $padding * 4.2;
 
     & h6, button{
       display: inline-block;
@@ -174,18 +252,24 @@
     }
 
     & button {
-      background-color: #e0d2e7;
+      background-color: $light-grey;
       border: none;
       border-radius: 15px;
       margin-right: $padding;
       color: $light-purple;
+
+
+
+      &.active{
+        background-color: $light-purple;
+        color: $white;
+      }
 
       &:hover{
         background-color: $light-purple;
         color: $white;
         cursor: pointer;
         transition: background-color 250ms, color 250ms;
-
       }
 
       & span.action {
@@ -195,30 +279,8 @@
         border-radius: 50%;
         margin-right: $padding/2;
         margin-top: 3px;
-
-        &#money-based-action{
-          background-color: $green;
-        }
-
-        &#virtual-action {
-          background-color: $blue;
-        }
-
-        &#physical-action{
-          background-color: $yellow;
-        }
       }
-    }
-  }
 
-  & .category-links {
-    border-radius: 10px;
-    display: inline-block;
-    width: 100%;
-
-    & span, div {
-      display: inline;
-      float: left;
     }
   }
 }
