@@ -1,10 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
+
 import SubCategoryList from 'components/SubCategoryList'
 
 class CategoryList extends React.Component {
   componentWillMount() {
-    this.setState({ visible: false, selected: 'all'});
+    this.setState({ visible: false, selected: 'all', showMenu: false });
+  }
+
+  componentDidMount() {
+    this.setState({ showMenu: true })
   }
 
   show () { this.setState({ visible: true }) }
@@ -48,7 +53,7 @@ class CategoryList extends React.Component {
               <div id="logo-img" />
               <h1 className='landing-header'>howdoihelp</h1>
             </div>
-            <div id='links-box'>
+            <div className={(this.state.showMenu ? 'visible ' : '') + 'links-box'}>
               <div id='links'>
                 <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'>us</a>
                 <a className={this.isActive('climate change')} onClick={this.handleCategoryClick.bind(this)} data-tag='climate change'> climate change</a>
