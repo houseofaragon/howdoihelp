@@ -55,13 +55,14 @@ class CategoryList extends React.Component {
             </div>
             <div className={(this.state.showMenu ? 'visible ' : '') + 'links-box'}>
               <div id='links'>
-                <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'>us</a>
+                <a className={this.isActive('government')} onClick={this.handleCategoryClick.bind(this)} data-tag='government'>us</a>
                 <a className={this.isActive('climate change')} onClick={this.handleCategoryClick.bind(this)} data-tag='climate change'> climate change</a>
                 <a className={this.isActive('education')} onClick={this.handleCategoryClick.bind(this)} data-tag='education'> education</a>
                 <a className={this.isActive('equality')} onClick={this.handleCategoryClick.bind(this)} data-tag='equality'> equality</a>
-                <a className={this.isActive('government')} onClick={this.handleCategoryClick.bind(this)} data-tag='government'> government</a>
+
                 <a className={this.isActive('healthcare')} onClick={this.handleCategoryClick.bind(this)} data-tag='healthcare'> healthcare</a>
                 <a className={this.isActive('International affairs')} onClick={this.handleCategoryClick.bind(this)} data-tag='International affairs'> international affairs</a>
+                 <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'> all</a>
               </div>
             </div>
           </div>
