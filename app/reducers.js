@@ -25,13 +25,13 @@ const reduceCategoriesList = (state, action) => {
 
 const reduceFilteredCategoriesList = (state, action) => {
   const newState = {}
-  Object.assign(newState, state, {filteredList: action.filteredList})
+  Object.assign(newState, state, {filteredList: action.filteredList, subFilteredList: action.filteredList})
   return newState
 }
 
 const reduceFilteredSubCategoriesList = (state, action) => {
   const newState = {}
-  Object.assign(newState, state, {filteredList: action.filteredList})
+  Object.assign(newState, state, {subFilteredList: action.subFilteredList})
   return newState
 }
 

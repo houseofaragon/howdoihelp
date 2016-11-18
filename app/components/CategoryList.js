@@ -4,37 +4,39 @@ import SubCategoryList from 'components/SubCategoryList'
 
 class CategoryList extends React.Component {
   componentWillMount() {
-    this.setState({ visible: false});
+    this.setState({ visible: false, selected: 'all'});
   }
 
   show () { this.setState({ visible: true }) }
 
-
   handleCategoryClick (e) {
-    this.props.onCategoryClick(e.target.getAttribute('data-tag'))
+    const selected = e.target.getAttribute('data-tag')
+    this.setState({selected: selected })
+    this.props.onCategoryClick(selected)
     this.show()
   }
 
-  handleSubCategoryClick (e) {
-    this.props.onSubCategoryClick(e)
+  isActive (value) {
+    return (value===this.state.selected) ? 'active':'default'
+  }
+
+  handleSubCategoryClick (subCategory) {
+    this.props.onSubCategoryClick(subCategory)
   }
 
   render () {
-    const data = this.props.categoryList || {}
+    const data = this.props.subFilteredList || {}
     const categoryList = Object.keys(data).map((site,idx) => (
       <div key={idx} >
-      <h4 className='category-header'>{site}</h4>
+      <hr />
       {data[site].map((item,idx) => (
-        <a key={idx} href={item.action_link} target="_blank">
-          <div className='category-div'>
+          <div className='category-div' key={idx}>
             <h4>{item.entity}</h4>
             <h5 className='category-description'>{item.description}</h5>
             <div className='category-links'>
-              <span className='action' id={item.action}></span>
-              <h6 id={item.action}>{item.action}</h6>
+              <a href={item.action_link} id={item.action}> <span id={item.action === 'online activism' ? 'online' : item.action}>&#10145; </span>{item.action}</a>
             </div>
           </div>
-        </a>
       ))}
       </div>
     ))
@@ -44,18 +46,17 @@ class CategoryList extends React.Component {
           <div id='landing-text'>
             <div id='header'>
               <div id="logo-img" />
-              <h1 className='landing-header'>howdoihelp<span id="underline"></span>?</h1>
+              <h1 className='landing-header'>howdoihelp</h1>
             </div>
-            <hr id='shadow'/>
             <div id='links-box'>
               <div id='links'>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='climate change'> Climate Change</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='education'> Education</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='equality'> Equality</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='government'> Government</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='healthcare'> Health Care</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='International affairs'> International Affairs</a>
-                <a onMouseOver={this.handleCategoryClick.bind(this)} data-tag='all'> All</a>
+                <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'>us</a>
+                <a className={this.isActive('climate change')} onClick={this.handleCategoryClick.bind(this)} data-tag='climate change'> climate change</a>
+                <a className={this.isActive('education')} onClick={this.handleCategoryClick.bind(this)} data-tag='education'> education</a>
+                <a className={this.isActive('equality')} onClick={this.handleCategoryClick.bind(this)} data-tag='equality'> equality</a>
+                <a className={this.isActive('government')} onClick={this.handleCategoryClick.bind(this)} data-tag='government'> government</a>
+                <a className={this.isActive('healthcare')} onClick={this.handleCategoryClick.bind(this)} data-tag='healthcare'> healthcare</a>
+                <a className={this.isActive('International affairs')} onClick={this.handleCategoryClick.bind(this)} data-tag='International affairs'> international affairs</a>
               </div>
             </div>
           </div>

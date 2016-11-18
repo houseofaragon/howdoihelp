@@ -1,70 +1,22 @@
-.header {
-  background: $purple; /* fallback for old browsers */
-  height: 20vh;
-  width: 100vw;
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 1;
+::-webkit-scrollbar {
+  display: none;
+}
 
-  & h1.landing-logo {
-    color: $light-pink;
-    position: absolute;
-    top: $padding * 4;
-    left: $padding * 4;
-    font-weight: 700;
-    height: 34px;
-    width: 32px;
-    background-image: url('images/hamburger.png');
-    &:hover{
-      cursor: pointer;
-    }
-  }
+& #add-organization{
+  border-radius: 10px;
+  color: $white;
+  padding: $padding;
+  display: block;
+  position: absolute;
+  top: 90vh;
+  left: $padding * 4;
 
-  & .menu{
-    display: hidden;
-  }
-
-  & .visible.menu {
-    display: inline-block;
-    opacity: 1;
-    transition: opacity 500ms;
-    margin-top: $padding * 3;
-    margin-left: $padding * 12;
-    height: 50px;
-    width: auto;
-    background: $purple;
-
-    & a { color: $white; margin-right: 10px; }
-
-    & div.social {
-      color: $white;
-      padding-right: $padding * 4;
-      vertical-align: middle;
-      display: inline-block;
-    }
-
-    & div.social#share{
-      width: 10px;
-      height: 50px;
-      background: url('images/share_white.png');
-    }
-    & div.social#facebook{
-      width: 10px;
-      height: 50px;
-      background-image: url('images/facebook_white.png');
-    }
-    & div.social#email{
-      width: 10px;
-      height: 50px;
-      background-image: url('images/email_white.png');
-    }
-    & div.social#instagram{
-      width: 10px;
-      height: 50px;
-      background-image: url('images/instagram_white.png');
-    }
+  &:hover{
+    color: $teal;
+    transition: color 250ms;
   }
 }
+
 .landing {
   background: $purple; /* fallback for old browsers */
   height: 100vh;
@@ -74,79 +26,62 @@
   overflow-x: hidden;
   position: fixed;
 
-
-  & #add-organization{
-    background-color: transparent;
-    color: $white;
-    border: 3px solid $light-purple;
-    padding: $padding;
-    display: block;
-    position: absolute;
-    top: 90vh;
-    left: $padding * 4;
-
-    &:hover{
-      color: $red;
-      border: 3px solid $red;
-      transition: color 250ms, border 250ms;
-    }
-  }
-
   & #landing-text{
     position: absolute;
     left: $padding * 4;
-    top: 35%;
+    top: 40vh;
     color: $white;
     z-index: 1;
     width: 100vw;
 
-    & #underline {
-      display: inline-block;
-      border-bottom: 2px solid $light-purple;
-      width: 300px;
-    }
-
-    hr#shadow{
+    /*
+      hr#shadow{
       z-index: 100;
       border: none;
       left: 375px;
       top: 85px;
       position: absolute;
       width: 300px;
-      height: 30px;
+      height: auto;
       -webkit-box-shadow: inset 13px 20px 57px 0px rgba(104,34,139,1);
       -moz-box-shadow: inset 13px 20px 57px 0px rgba(104,34,139,1);
       box-shadow: inset 0px -20px 57px 0px rgba(104,34,139,1);
     }
+    */
 
     & #links-box {
       position: absolute;
-      left: 375px;
-      width: 300px;
-      height: 70px;
-      top: 40px;
+      left: 385px;
+      width: 290px;
+      height: 300px;
+      top: -350px;
       overflow: auto;
       background: transparent;
       position: absolute;
+      padding-top: 200px;
+      padding-bottom: 500px;
 
       & #links {
         overflow-y: hidden;
         padding-bottom: 20px;
-        text-align: center;
+        text-align: left;
+        padding-top: 190px;
+
+        & .active{
+          color: $white;
+        }
         & a{
           width: 300px;
           z-index: 10;
           font-weight: 700;
           display: block;
-          font-size: 2em;
-          color: $white;
-          padding-bottom: 10px;
-          margin: 0;
+          font-size: 2.3em;
+          color: $light-purple;
           letter-spacing: 1px;
 
           &:hover{
             cursor: pointer;
-            color: $teal;
+            color: $white;
           }
         }
       }
@@ -205,7 +140,6 @@
   display: block;
   z-index: 100;
   width: 40vw;
-  right: 0;
   height: 100%;
   clear: both;
   padding: 0 $padding * 3;
@@ -219,27 +153,43 @@
     padding-bottom: $padding * 6;
   }
 
-  & .category-header{
-    color: $dark-blue;
-    border-bottom: 3px solid $dark-blue;
+  & hr{
+    border: 2px solid $teal;
     text-transform: uppercase;
-    margin: -$padding * 4 auto $padding * 2;
+    margin-top: -$padding * 3;
     position: fixed;
     width: 100%;
   }
 
   & .category-div {
+      margin-bottom: $padding * 3;
+
+      &:after {
+        border-left: 3px solid $teal;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: -10px;
+        width: 0;
+        height: 0;
+        border-color: transparent transparent transparent $purple;
+        border-style: solid;
+        border-width: 10px;
+      }
       & h4{
         display: inline-block;
         padding: $padding 0 5px 0;
-        margin: $padding 0 $padding 0;
+        margin: $padding 0 0 0;
         max-width: 30vw;
+        text-transform: uppercase;
       }
 
       & .category-description{
         font-family: 'Work Sans', sans-serif;
         font-weight: 400;
         letter-spacing: 0.5px;
+        font-size: 1em;
       }
 
       & #message {
@@ -247,44 +197,51 @@
         margin: 30px auto;
         color: $blue;
       }
-
-      & .action {
-        width: 8px;
-        height: 8px;
-        display: inline-block;
-        border-radius: 50%;
-        margin-right: $padding/2;
-        margin-top: 3px;
-
-        &#donate{
-          background-color: $green;
+      & h6#donate{
           color: $green;
-        }
+      }
+      & h6#volunteer{
+          color: $pink;
+      }
 
-        &#online activism {
-          background-color: $blue;
-          color: #2196f3;
-        }
+      & .category-links {
+        border-radius: 10px;
+        display: inline-block;
+        border: none;
+        border-radius: 15px;
+        margin-top: $padding * 1.5;
+        color: $light-purple;
+        & a {
+          font-size: 0.7em;
+          padding: $padding;
+          background-color: $light-grey;
+          color: $purple;
+          border-radius: 12px;
+          margin-right: $padding;
+          line-height: 2em;
 
-        &#in-person, h6{
-          background-color: $yellow;
-          color: $yellow;
+          &:hover{
+            background-color: $purple;
+            color: $white;
+            transition: color 250ms, background-color 250ms;
+          }
+          & span{
+            font-size: 1.8em;
+            vertical-align: middle;
+            &#donate { color: $green; }
+            &#online { color: $blue; }
+            &#volunteer { color: $pink; }
+          }
         }
       }
-    &:hover{
-      color: $blue;
-      cursor: pointer;
-    }
   }
-
 
   & #sub-category-list {
     position: fixed;
-    width: 100%;
+    width: 35vw;
     background: $white;
-    height: $padding * 9.5;
-    padding-top: $padding * 3;
-
+    height: $padding * 7;
+    padding-top: $padding * 4.2;
 
     & h6, button{
       display: inline-block;
@@ -301,12 +258,18 @@
       margin-right: $padding;
       color: $light-purple;
 
+
+
+      &.active{
+        background-color: $light-purple;
+        color: $white;
+      }
+
       &:hover{
         background-color: $light-purple;
         color: $white;
         cursor: pointer;
         transition: background-color 250ms, color 250ms;
-
       }
 
       & span.action {
@@ -316,20 +279,8 @@
         border-radius: 50%;
         margin-right: $padding/2;
         margin-top: 3px;
-
-
       }
-    }
-  }
 
-  & .category-links {
-    border-radius: 10px;
-    display: inline-block;
-    width: 100%;
-
-    & span, div {
-      display: inline;
-      float: left;
     }
   }
 }

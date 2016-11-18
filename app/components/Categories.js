@@ -19,20 +19,24 @@ class Categories extends React.Component {
     this.props.filterByCategory(this.props.list, e)
   }
 
-  handleSubCategoryClick (e) {
-    console.log(e)
-    this.props.filterBySubCategory(this.props.filteredList, e)
+  handleSubCategoryClick (subCategory) {
+    this.props.filterBySubCategory(this.props.filteredList, subCategory)
   }
 
   render () {
     let categoryList
-    if(this.props.filteredList) categoryList = this.props.filteredList || {}
+    if(this.props.filteredList) {
+      console.log('we have a filtered List')
+      categoryList = this.props.filteredList || {}
+      if(this.props.subFilteredList) categoryList = this.props.subFilteredList || {}
+    }
     else categoryList = this.props.list || {}
+    console.log('Category List' , categoryList)
     return (
       <div>
         <CategoryList
+          subFilteredList={categoryList}
           onCategoryClick={this.handleCategoryClick}
-          categoryList={categoryList}
           onSubCategoryClick={this.handleSubCategoryClick}
           ref="right" alignment="right" />
       </div>
@@ -43,6 +47,7 @@ class Categories extends React.Component {
 Categories.propTypes = {
   list: React.PropTypes.object,
   filteredList: React.PropTypes.object,
+  subFilteredList: React.PropTypes.object,
   getCategoriesList: React.PropTypes.func,
   filterByCategory: React.PropTypes.func,
   filterBySubCategory: React.PropTypes.func
@@ -51,7 +56,7 @@ Categories.propTypes = {
 const mapStateToProps = (state) => ({
   list: state.list,
   filteredList: state.filteredList,
-  subCategoryList: state.subCategoryList
+  subFilteredList: state.subFilteredList
 })
 
 const mapDispatchToProps = (dispatch) => ({

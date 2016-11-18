@@ -18,14 +18,15 @@ export const setCategoriesList = (categoriesList) => (
 export const setFilteredCategoriesList = (filteredList) => (
   {
     type: 'SET_FILTERED_CATEGORIES_LIST',
-    filteredList: filteredList
+    filteredList: filteredList,
+    subFilteredList: filteredList
   }
 )
 
-export const setFilteredSubCategoriesList = (filteredList) => (
+export const setFilteredSubCategoriesList = (subFilteredList) => (
   {
     type: 'SET_FILTERED_SUB_CATEGORIES_LIST',
-    filteredList: filteredList
+    subFilteredList: subFilteredList
   }
 )
 
@@ -37,10 +38,17 @@ export const filterByCategory = (list, filter) => (dispatch) => {
 }
 
 export const filterBySubCategory = (filteredList, filter) => (dispatch) => {
-  let filteredList
-  if (filter === 'all') filteredList = filteredList
-  else filteredList = _.pickBy(filteredList, (value, key) =>  _.startsWith(value.action, filter))
-  dispatch(setFilteredSubCategoriesList(filteredList))
+
+  let list
+  let key = Object.keys(filteredList)
+  if (filter === 'all') list = filteredList
+  else {
+    list = key.map((v) => filteredList[v].filter(f => f.action === filter))
+    let newList = {}
+    newList[key] = list[0]
+    list = newList
+  }
+  dispatch(setFilteredSubCategoriesList(list))
 }
 
 export const getCategoriesList = () => (dispatch) => {
