@@ -1,0 +1,50 @@
+
+.header {
+  height: 100vh;
+  width: 10vw;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
+
+  & h1.landing-logo {
+    color: $light-pink;
+    position: absolute;
+    top: $padding * 4;
+    left: $padding * 4;
+    font-weight: 700;
+    height: 34px;
+    width: 32px;
+    background-image: url('images/hamburger.png');
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  & .menu{
+    display: none;
+  }
+
+  & .visible.menu {
+    padding: 0 20px 20px 0;
+    opacity: 1;
+    display: block;
+    transition: opacity 500ms;
+    margin-top: $padding * 10;
+    margin-left: $padding * 4;
+    width: auto;
+
+    & a {
+      display: block;
+      color: $white;
+      margin-right: 10px;
+      margin-bottom: $padding/2;
+
+      &:hover{
+        color: $teal;
+        transition: color 250ms;
+        cursor: pointer;
+      }
+    }
+  }
+}

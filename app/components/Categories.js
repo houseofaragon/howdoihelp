@@ -1,30 +1,44 @@
 import React from 'react'
 import CategoryList from 'components/CategoryList'
-
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getCategoriesList, filterCategoriesList } from '../actions.js'
+import { getCategoriesList, filterByCategory, filterBySubCategory } from '../actions.js'
+require('../../docs/css/index.scss')
 
 class Categories extends React.Component {
   constructor (props) {
     super(props)
-    this.handleSiteLinkClick = this.handleSiteLinkClick.bind(this)
+    this.handleCategoryClick = this.handleCategoryClick.bind(this)
+    this.handleSubCategoryClick = this.handleSubCategoryClick.bind(this)
   }
   componentWillMount() {
     this.props.getCategoriesList()
   }
 
-  handleSiteLinkClick (e) {
-    this.props.filterCategoriesList(this.props.list, e)
+  handleCategoryClick (e) {
+    this.props.filterByCategory(this.props.list, e)
+  }
+
+  handleSubCategoryClick (subCategory) {
+    this.props.filterBySubCategory(this.props.filteredList, subCategory)
   }
 
   render () {
     let categoryList
-    if(this.props.filteredList) categoryList = this.props.filteredList || {}
+    if(this.props.filteredList) {
+      console.log('we have a filtered List')
+      categoryList = this.props.filteredList || {}
+      if(this.props.subFilteredList) categoryList = this.props.subFilteredList || {}
+    }
     else categoryList = this.props.list || {}
+    console.log('Category List' , categoryList)
     return (
       <div>
-        <CategoryList onMenuClick={this.handleSiteLinkClick} categoryList={categoryList} ref="right" alignment="right" />
+        <CategoryList
+          subFilteredList={categoryList}
+          onCategoryClick={this.handleCategoryClick}
+          onSubCategoryClick={this.handleSubCategoryClick}
+          ref="right" alignment="right" />
       </div>
     )
   }
@@ -33,18 +47,22 @@ class Categories extends React.Component {
 Categories.propTypes = {
   list: React.PropTypes.object,
   filteredList: React.PropTypes.object,
+  subFilteredList: React.PropTypes.object,
   getCategoriesList: React.PropTypes.func,
-  filterCategoriesList: React.PropTypes.func,
+  filterByCategory: React.PropTypes.func,
+  filterBySubCategory: React.PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
   list: state.list,
-  filteredList: state.filteredList
+  filteredList: state.filteredList,
+  subFilteredList: state.subFilteredList
 })
 
 const mapDispatchToProps = (dispatch) => ({
   getCategoriesList: bindActionCreators(getCategoriesList,dispatch),
-  filterCategoriesList: bindActionCreators(filterCategoriesList,dispatch)
+  filterByCategory: bindActionCreators(filterByCategory,dispatch),
+  filterBySubCategory: bindActionCreators(filterBySubCategory,dispatch)
 })
 
 
