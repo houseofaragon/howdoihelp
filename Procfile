@@ -1,1 +1,1 @@
-web: npm run start:prod:wq
+web: npm run start:prod
