@@ -41,6 +41,7 @@ export const filterBySubCategory = (filteredList, filter) => (dispatch) => {
 
   let list
   let key = Object.keys(filteredList)
+  console.log('key', key)
   if (filter === 'all') list = filteredList
   else {
     list = key.map((v) => filteredList[v].filter(f => f.action === filter))

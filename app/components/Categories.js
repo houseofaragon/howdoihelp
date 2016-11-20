@@ -20,7 +20,10 @@ class Categories extends React.Component {
   }
 
   handleSubCategoryClick (subCategory) {
-    this.props.filterBySubCategory(this.props.filteredList, subCategory)
+    let list
+    if(subCategory === 'all') list = this.props.list
+    else list = this.props.filteredList
+    this.props.filterBySubCategory(list, subCategory)
   }
 
   render () {
