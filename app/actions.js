@@ -3,7 +3,7 @@ export const SET_CATEGORIES_LIST = 'SET_CATEGORIES_LIST'
 export const SET_FILTERED_CATEGORIES_LIST = 'SET_FILTERED_CATEGORIES_LIST'
 export const SET_FILTERED_SUB_CATEGORIES_LIST = 'SET_FILTERED_SUB_CATEGORIES_LIST'
 
-import { groupBy, pickBy } from 'lodash'
+import { groupBy, pickBy, extend } from 'lodash'
 import promise from 'es6-promise'
 promise.polyfill()
 import fetch from 'isomorphic-fetch'
@@ -38,26 +38,32 @@ export const filterByCategory = (list, filter) => (dispatch) => {
 }
 
 export const filterBySubCategory = (filteredList, filter) => (dispatch) => {
-
-  let list
   let key = Object.keys(filteredList)
-  console.log('key', key)
-  if (filter === 'all') list = filteredList
-  else {
-    list = key.map((v) => filteredList[v].filter(f => f.action === filter))
-    let newList = {}
-    newList[key] = list[0]
-    list = newList
+  if (filter === 'all'){
+      dispatch(setFilteredSubCategoriesList(filteredList))
   }
-  dispatch(setFilteredSubCategoriesList(list))
+  else {
+    let list = {}
+    Object.keys(filteredList).map((v) => (
+      Object.keys(filteredList[v]).map(f => {
+        filteredList[v][f].actions.map(check => {
+          if(check.action === filter){
+            list[f] = filteredList[v][f]
+          }
+        })})
+    ))
+    let newList = {}
+    newList[key] = list
+    dispatch(setFilteredSubCategoriesList(newList))
+  }
 }
 
 export const getCategoriesList = () => (dispatch) => {
-  const apiURL = 'https://s3.amazonaws.com/howdoihelp.us/entities.json'
+  const apiURL = 'https://s3.amazonaws.com/howdoihelp.us/bak/1479660952/entities.json'
   fetch(apiURL)
     .then(response => response.json())
     .then(data => {
-      const list = _.groupBy(data, "category")
+      const list = data
       dispatch(setCategoriesList(list))
     })
     .catch((error) => console.log('request failed', error))

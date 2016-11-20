@@ -21,7 +21,7 @@ class Categories extends React.Component {
 
   handleSubCategoryClick (subCategory) {
     let list
-    if(subCategory === 'all') list = this.props.list
+    if(subCategory === 'all') list = this.props.filteredList
     else list = this.props.filteredList
     this.props.filterBySubCategory(list, subCategory)
   }
@@ -29,12 +29,10 @@ class Categories extends React.Component {
   render () {
     let categoryList
     if(this.props.filteredList) {
-      console.log('we have a filtered List')
       categoryList = this.props.filteredList || {}
       if(this.props.subFilteredList) categoryList = this.props.subFilteredList || {}
     }
     else categoryList = this.props.list || {}
-    console.log('Category List' , categoryList)
     return (
       <div>
         <CategoryList

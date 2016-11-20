@@ -12,7 +12,6 @@ class SubCategoryList extends React.Component {
   }
 
   isActive (value) {
-    console.log('value', value)
     return (value===this.state.selected) ? 'active':'default'
   }
 
@@ -24,7 +23,6 @@ class SubCategoryList extends React.Component {
         <button className={this.isActive('donate')} onClick={this.onSubCategoryClick.bind(this)} data-id="donate"> <span className='action green-bg' ></span> Donate</button>
         <button className={this.isActive('online activism')} onClick={this.onSubCategoryClick.bind(this)} data-id="online activism"> <span className='action teal-bg'></span> Online</button>
         <button onClick={this.onSubCategoryClick.bind(this)} data-id="all"> &#10005; Remove</button>
-
       </div>
     )
   }

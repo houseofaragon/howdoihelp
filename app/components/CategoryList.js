@@ -32,15 +32,19 @@ class CategoryList extends React.Component {
     const data = this.props.subFilteredList || {}
     const categoryList = Object.keys(data).map((site,idx) => (
       <div key={idx} >
-      <hr />
-      {data[site].map((item,idx) => (
+      {Object.keys(data[site]).map((item,idx) => (
           <div className='category-div' key={idx}>
-            <h4>{item.entity}</h4>
-            <h5 className='category-description'>{item.description}</h5>
+            <h4>{item}</h4>
+            <h5 className='category-description'>{data[site][item].description}</h5>
             <div className='category-links'>
-              <a href={item.action_link} id={item.action}> <span id={item.action === 'online activism' ? 'online' : item.action}>&#10145; </span>{item.action}</a>
+              {Object.keys(data[site][item].actions).map(i => (
+                <a href={data[site][item].actions[i].action_link}
+                   id={data[site][item].actions[i].action}>
+                  <span id={data[site][item].actions[i].action === 'online activism' ? 'online' : data[site][item].actions[i].action}>&#10145; </span>{data[site][item].actions[i].action}
+                </a>
+              ))}
             </div>
-          </div>
+            </div>
       ))}
       </div>
     ))

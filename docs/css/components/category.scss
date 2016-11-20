@@ -268,11 +268,11 @@
 
   & #sub-category-list {
     position: fixed;
-    width: 35vw;
+    width: 40vw;
     background: $white;
     height: $padding * 7;
     padding-top: $padding * 4.2;
-
+    border-bottom: 3px solid $teal;
     & h6, button{
       display: inline-block;
     }
