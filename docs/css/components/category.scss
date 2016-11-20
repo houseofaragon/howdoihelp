@@ -2,20 +2,44 @@
   display: none;
 }
 
-& #add-organization{
-  border-radius: 10px;
-  color: $white;
-  padding: $padding;
-  display: block;
-  position: absolute;
-  top: 90vh;
-  left: $padding * 4;
+#footer {
+    position: fixed;
+    top: 90vh;
+    left: $padding * 4;
 
-  &:hover{
-    color: $teal;
-    transition: color 250ms;
+  & #add-organization{
+    letter-spacing: 0.9px;
+    font-size: 1em;
+    display: block;
+    border-radius: 10px;
+    color: $white;
+    padding: $padding $padding $padding/4 0;
+    &:hover{
+      color: $teal;
+      transition: color 250ms;
+    }
+  }
+  .dots {
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5.8px;
+
+      &.blue{ background-color: $blue; }
+      &.green{ background-color: $green; }
+      &.light-purple{ background-color: $light-purple; }
+      &.yellow{ background-color: $yellow; }
+
+      &.orange{ background-color: $orange; }
+      &.pink{ background-color: $pink; }
+
+    }
   }
 }
+
+
 
 .landing {
   background: $purple; /* fallback for old browsers */
@@ -60,18 +84,18 @@
       left: 385px;
       width: 290px;
       height: 300px;
-      top: -350px;
+      top: -378px;
       overflow: auto;
       background: transparent;
       position: absolute;
-      padding-top: 200px;
+      padding-top: 128px;
       padding-bottom: 500px;
 
       & #links {
         overflow-y: hidden;
-        padding-bottom: 20px;
+        margin-bottom: -33px;
         text-align: left;
-        padding-top: 190px;
+        padding-top: 290px;
 
         & .active{
           color: $white;
@@ -95,7 +119,6 @@
       ::-webkit-scrollbar {
           display: none;
       }
-
     }
 
     & #header {
@@ -109,6 +132,7 @@
         border: none;
         border-radius: 50%;
         z-index: 1000;
+        margin-top: -10px;
         background-image: url('images/logo.png')
       }
 

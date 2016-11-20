@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
-
 import SubCategoryList from 'components/SubCategoryList'
 
 class CategoryList extends React.Component {
   componentWillMount() {
-    this.setState({ visible: false, selected: 'us', showMenu: false });
+    this.setState({ visible: false, selected: 'government', showMenu: false });
   }
 
   componentDidMount() {
@@ -60,12 +59,11 @@ class CategoryList extends React.Component {
                 <a className={this.isActive('education')} onClick={this.handleCategoryClick.bind(this)} data-tag='education'> education</a>
                 <a className={this.isActive('equality')} onClick={this.handleCategoryClick.bind(this)} data-tag='equality'> equality</a>
                 <a className={this.isActive('healthcare')} onClick={this.handleCategoryClick.bind(this)} data-tag='healthcare'> healthcare</a>
-                <a className={this.isActive('International affairs')} onClick={this.handleCategoryClick.bind(this)} data-tag='International affairs'> international affairs</a>
-                 <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'> all</a>
+                <a className={this.isActive('International affairs')} onClick={this.handleCategoryClick.bind(this)} data-tag='International affairs'> international-affairs</a>
+                <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'> all</a>
               </div>
             </div>
           </div>
-          <a href='https://docs.google.com/forms/d/e/1FAIpQLScONOA_hSg3cPo-rkFruIEfId4K19cHZ5j9kLM-9Rx_8MLFnQ/viewform' id='add-organization'  target="_blank"> submit a way to help</a>
         </div>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
           <SubCategoryList onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>
