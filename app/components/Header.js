@@ -25,19 +25,19 @@ class Header extends React.Component {
         <h1 className='landing-logo' onClick={this.handleLogoClick.bind(this)}></h1>
         <div className={(this.state.menuVisible ? "visible " : "") + 'menu'}>
           {path}
-          <a href='https://instagram.com/howdoihelpus'>
+          <a target="_blank" href='https://instagram.com/howdoihelpus'>
             <div className='dot green' />
             <div className='social' id='instagram' alt='howdoihelpus-instagram' />instagram</a>
-          <a href='https://www.facebook.com/howdoihelpus/?hc_ref=SEARCH&fref=nf'>
+          <a target="_blank" href='https://www.facebook.com/howdoihelpus/?hc_ref=SEARCH&fref=nf'>
             <div className='dot light-purple' />
             <div className='social' id='facebook' alt='howdoihelpus-facebook' />facebook</a>
-          <a href='https://www.twitter.com/howdoihelpus/'>
+          <a target="_blank" href='https://www.twitter.com/howdoihelpus/'>
             <div className='dot yellow' />
             <div className='social' id='twitter' alt='howdoihelpus-twitter' />twitter</a>
-          <a href='mailto:howdoihelpus@gmail.com'>
+          <a target="_blank" href='mailto:howdoihelpus@gmail.com'>
             <div className='dot orange' />
             <div href='https://twitter.com/howdoihelpus' className='social' id='email' alt='howdoihelpus-email' />contact</a>
-          <a href=''>
+          <a target="_blank" href=''>
             <div className='dot pink' />
             <div href='' className= 'social' id='share' alt='howdoihelpus-share' />share</a>
         </div>

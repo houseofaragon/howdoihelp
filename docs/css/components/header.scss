@@ -31,25 +31,29 @@
     transition: opacity 500ms;
     margin-top: $padding * 10;
     margin-left: $padding * 4;
-    width: 110px;
+    width: 150px;
 
     & a {
       color: $white;
-      margin-right: 10px;
+      margin-right: 12px;
       margin-bottom: $padding/2;
       clear: both;
       display: block;
+      font-weight: 300;
+      letter-spacing: 1px;
+      font-size: 0.9em;
 
       & .dot{
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
-        margin-right: 6px;
+        margin-right: 15px;
         background-color: $white;
         display: inline-block;
-        &.blue{ background-color: $blue; }
+        vertical-align: middle;
+        &.blue{ background-color: $teal; }
         &.green{ background-color: $green; }
-        &.light-purple{ background-color: $light-purple; }
+        &.light-purple{ background-color: $grey; }
         &.yellow{ background-color: $yellow; }
         &.orange{ background-color: $orange; }
         &.pink{ background-color: $pink; }

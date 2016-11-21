@@ -15,25 +15,50 @@
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
-  .landing {
-    z-index: 1;
-    height: 110px;
-    & h1.landing-logo { left: $padding; font-size: 1em; color: $white;}
-    & h2, h1.landing-header { display: none;}
-    & #landing-text {
-      top: $padding * 5;
-      width: 90vw;
-      left: $padding;
-      a {
-        font-size: 0.8em;
-        border-bottom: none;
-        margin: 0 $padding/2;
-        padding: 0;
-      }
+  .header{
+    & h1.landing-logo{
+      top: $padding * 2;
+      left: $padding * 2;
     }
   }
-  .landing-side-grid {
-    margin-top: $padding * 10;
+  .landing{
+    height: 500px;
+
+
+    & #landing-text{
+      top: 0;
+      left: $padding * 8;
+
+      & .links-box.visible{
+        opacity: 1;
+        top: 60px;
+        left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 70px;
+
+        & #links{
+          top: 0;
+          color: $teal;
+          padding-top: 0;
+          & a{
+            font-size: 1.5em;
+            color: $light-purple;
+          }
+        }
+      }
+      & #header div#logo-img{ display:none }
+      & #header h1.landing-header {
+        margin:0;
+        padding:0;
+        font-size: 1.4em;
+        line-height: 75px;
+      }
+    }
+
+  }
+  .landing-side-grid.visible {
+    margin-top: 500px;
     width: 100vw;
     & #category-list { margin-top: 0; }
     & .category-header { display: none; }
@@ -68,6 +93,7 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+
   .landing-side-grid {
     width: 100vw;
     padding: $padding * 2;

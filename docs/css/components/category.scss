@@ -8,17 +8,19 @@
     left: $padding * 4;
 
   & #add-organization{
-    letter-spacing: 0.9px;
+    letter-spacing: 1.7px;
     font-size: 1em;
     display: block;
     border-radius: 10px;
     color: $white;
     padding: $padding $padding $padding/4 0;
+    font-weight: 200;
     &:hover{
       color: $teal;
       transition: color 250ms;
     }
   }
+
   .dots {
     .dot{
       width: 10px;
@@ -27,19 +29,16 @@
       display: inline-block;
       margin-right: 5.8px;
 
-      &.blue{ background-color: $blue; }
+      &.blue{ background-color: $teal; }
       &.green{ background-color: $green; }
-      &.light-purple{ background-color: $light-purple; }
+      &.light-purple{ background-color: $grey; }
       &.yellow{ background-color: $yellow; }
 
       &.orange{ background-color: $orange; }
       &.pink{ background-color: $pink; }
-
     }
   }
 }
-
-
 
 .landing {
   background: $purple; /* fallback for old browsers */
@@ -100,6 +99,7 @@
         & .active{
           color: $white;
         }
+
         & a{
           width: 300px;
           z-index: 10;
@@ -111,7 +111,7 @@
 
           &:hover{
             cursor: pointer;
-            color: $white;
+            color: #9d70b4;
           }
         }
       }
@@ -145,7 +145,6 @@
         line-height: 120px;
         display: inline-block;
         margin-left: $padding;
-
       }
     }
   }
@@ -209,10 +208,12 @@
       }
       & h4{
         display: inline-block;
-        padding: $padding 0 5px 0;
+        padding: $padding 0 0 0;
         margin: $padding 0 0 0;
         max-width: 30vw;
         text-transform: uppercase;
+        font-weight: 900;
+        font-size: 1.3em;
       }
 
       & .category-description{
@@ -256,10 +257,11 @@
             transition: color 250ms, background-color 250ms;
           }
           & span{
+            margin-left: $padding/2;
             font-size: 1.8em;
             vertical-align: middle;
             &#donate { color: $green; }
-            &#online { color: $blue; }
+            &#online { color: $teal; }
             &#volunteer { color: $pink; }
           }
         }
