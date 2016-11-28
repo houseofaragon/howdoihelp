@@ -7,6 +7,7 @@ class SubCategoryList extends React.Component {
 
   onSubCategoryClick = (e) => {
     const selected = e.target.getAttribute('data-id')
+    console.log
     this.props.onSubCategoryClick(selected)
     this.setState({selected: selected })
   }
@@ -17,12 +18,14 @@ class SubCategoryList extends React.Component {
 
   render () {
     return (
+      <div>
+      <h2 id="sub-category-header"> 3 WAYS YOU CAN HELP </h2>
       <div id='sub-category-list'>
-        <h6> Filter: </h6>
-        <button className={this.isActive('volunteer')} onClick={this.onSubCategoryClick.bind(this)} data-id="volunteer"> <span className='action pink-bg'></span>In Person</button>
-        <button className={this.isActive('donate')} onClick={this.onSubCategoryClick.bind(this)} data-id="donate"> <span className='action green-bg' ></span> Donate</button>
-        <button className={this.isActive('online activism')} onClick={this.onSubCategoryClick.bind(this)} data-id="online activism"> <span className='action teal-bg'></span> Online</button>
+        <button className={this.isActive('volunteer')}> <span className='action in-person' onClick={this.onSubCategoryClick.bind(this)} data-id="volunteer"></span>In Person</button>
+        <button className={this.isActive('donate')}> <span className='action donate' onClick={this.onSubCategoryClick.bind(this)} data-id="donate"></span> Donate</button>
+        <button className={this.isActive('online activism')}> <span className='action online' onClick={this.onSubCategoryClick.bind(this)} data-id="online"></span> Online</button>
         <button onClick={this.onSubCategoryClick.bind(this)} data-id="all"> &#10005; Remove</button>
+      </div>
       </div>
     )
   }

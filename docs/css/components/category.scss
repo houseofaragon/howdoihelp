@@ -58,10 +58,6 @@
     z-index: 1;
     width: 100vw;
 
-
-
-
-
     & .links-box{
       opacity: 0;
       height: 0;
@@ -101,7 +97,7 @@
         top: 400px;
         position: fixed;
         width: 300px;
-        height: 250px;
+        height: 350px;
         -webkit-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
         -moz-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
         box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
@@ -194,7 +190,7 @@
   background: $white;
 
   & #category-list{
-    margin-top: $padding * 14;
+    margin-top: $padding * 16;
     padding-bottom: $padding * 6;
   }
 
@@ -284,29 +280,37 @@
       }
   }
 
+  & #sub-category-header{
+    text-align: center;
+    margin: $padding * 2 auto;
+    font-weight: 400;
+  }
+
   & #sub-category-list {
     position: fixed;
     width: 40vw;
     background: $white;
-    height: $padding * 7;
-    padding-top: $padding * 4.2;
-    border-bottom: 3px solid $teal;
+    height: $padding * 11.55;
+    border-bottom: 3px solid $purple;
+    border-top: 3px solid $purple;
+    margin-left: -30px;
+    text-align: center;
     & h6, button{
       display: inline-block;
     }
 
     & h6{
       margin-right: $padding;
+      vertical-align: middle;
+      display: inline-block;
+      margin-top: -80px;
     }
 
     & button {
-      background-color: $light-grey;
+      background-color: transparent;
       border: none;
-      border-radius: 15px;
       margin-right: $padding;
       color: $light-purple;
-
-
 
       &.active{
         background-color: $light-purple;
@@ -321,13 +325,23 @@
       }
 
       & span.action {
-        width: 8px;
-        height: 8px;
-        display: inline-block;
-        border-radius: 50%;
+        width: 80px;
+        height: 80px;
         margin-right: $padding/2;
         margin-top: 3px;
+        display: block;
+
+        &.in-person{
+          background-image: url('images/inperson-color.png')
+        }
+        &.donate{
+          background-image: url('images/donate-color.png')
+        }
+        &.online{
+          background-image: url('images/online-color.png')
+        }
       }
+
 
     }
   }
