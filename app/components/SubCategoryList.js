@@ -19,6 +19,7 @@ class SubCategoryList extends React.Component {
   render () {
     return (
       <div id='sub-category-list'>
+        <div id="close" onClick={this.props.closeSideBar}> &#10005; </div>
         <h2 id="sub-category-header"> 3 WAYS YOU CAN HELP </h2>
         <hr />
         <button className={this.isActive('volunteer')}> <span className='action in-person' onClick={this.onSubCategoryClick.bind(this)} data-id="volunteer"></span>In Person</button>

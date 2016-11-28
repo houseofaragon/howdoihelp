@@ -28,6 +28,10 @@ class CategoryList extends React.Component {
     this.props.onSubCategoryClick(subCategory)
   }
 
+  closeSideBar () {
+    this.setState({ visible: false })
+  }
+
   render () {
     const data = this.props.subFilteredList || {}
     const categoryList = Object.keys(data).map((site,idx) => (
@@ -74,7 +78,7 @@ class CategoryList extends React.Component {
           </div>
         </div>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
-          <SubCategoryList onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>
+          <SubCategoryList closeSideBar={this.closeSideBar.bind(this)} onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>
           <div id='category-list'>
             {categoryList}
           </div>

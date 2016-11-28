@@ -81,10 +81,10 @@
         z-index: 100;
         border: none;
         left: 420px;
-        top: 100px;
+        top: 0;
         position: fixed;
         width: 300px;
-        height: 250px;
+        height: 350px;
         -webkit-box-shadow: inset 2px 200px 205px -20px rgba(104,34,139,1);
         -moz-box-shadow: inset 2px 200px 205px -2px rgba(104,34,139,1);
         box-shadow: inset 2px 200px 205px -20px rgba(104,34,139,1);
@@ -94,10 +94,10 @@
         z-index: 100;
         border: none;
         left: 420px;
-        top: 400px;
+        top: 510px;
         position: fixed;
         width: 300px;
-        height: 350px;
+        height: 150px;
         -webkit-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
         -moz-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
         box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
@@ -187,6 +187,7 @@
   overflow-y: auto;
   position: absolute;
   background: $white;
+
 
   & #category-list{
     margin-top: $padding * 20;
@@ -281,6 +282,24 @@
     border-bottom: 4px solid $purple;
     margin-left: -30px;
     text-align: center;
+
+    & #close{
+      position: absolute;
+      width: 60px;
+      height: 57px;
+      background-color: $light-purple;
+      margin-left: -60px;
+      color: $purple;
+      font-size: 2em;
+      font-weight: 200;
+      line-height: 57px;
+
+      &:hover{
+        color: $white;
+        transition: color 250ms;
+        cursor: pointer;
+      }
+    }
 
     & #sub-category-header{
       text-align: center;
