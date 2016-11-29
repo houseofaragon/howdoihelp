@@ -104,7 +104,7 @@
       }
 
       & #links {
-        overflow-y: hidden;
+        overflow-y: scroll;
         margin-bottom: -33px;
         text-align: left;
         padding-top: 290px;
@@ -290,7 +290,7 @@
       background-color: $light-purple;
       margin-left: -60px;
       color: $purple;
-      font-size: 2em;
+      font-size: 2.3em;
       font-weight: 200;
       line-height: 57px;
 

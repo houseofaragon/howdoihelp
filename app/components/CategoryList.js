@@ -4,7 +4,7 @@ import SubCategoryList from 'components/SubCategoryList'
 
 class CategoryList extends React.Component {
   componentWillMount() {
-    this.setState({ visible: false, selected: 'government', showMenu: false });
+    this.setState({ visible: false, selected: 'government', showMenu: true });
   }
 
   componentDidMount() {
