@@ -169,16 +169,16 @@
   }
 }
 
-.landing-side-grid{
-  right:-40vw;
-  transition: right ease 250ms;
-
-}
-
 .landing-side-grid.visible{
   right: 0;
   transition: right ease 250ms;
   display: block;
+
+}
+
+.landing-side-grid{
+  right:-70vw;
+  transition: right ease 250ms;
   width: 40vw;
   height: 100%;
   clear: both;
