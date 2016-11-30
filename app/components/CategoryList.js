@@ -44,7 +44,8 @@ class CategoryList extends React.Component {
               {Object.keys(data[site][item].actions).map(i => (
                 <a target="_blank" href={data[site][item].actions[i].link}
                    id={data[site][item].actions[i].action}>
-                  {data[site][item].actions[i].action}<span id={data[site][item].actions[i].action === 'online activism' ? 'online' : data[site][item].actions[i].action}>&#10145; </span>
+                  {data[site][item].actions[i].action === 'in-person' ? 'in person' : data[site][item].actions[i].action }<span id={data[site][item].actions[i].action}>
+                  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                 </a>
               ))}
             </div>
@@ -75,12 +76,15 @@ class CategoryList extends React.Component {
               </div>
             </div>
         </div>
+        <div className={(this.state.visible ? "visible " : "")} id="close" onClick={this.closeSideBar.bind(this)}> &#10005; </div>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
           <SubCategoryList closeSideBar={this.closeSideBar.bind(this)} onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>
           <div id='category-list'>
             {categoryList}
           </div>
         </div>
+        <div id='shadow-top' />
+        <div id='shadow-bottom' />
       </div>
     )
   }

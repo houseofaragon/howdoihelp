@@ -59,7 +59,7 @@ export const filterBySubCategory = (filteredList, filter) => (dispatch) => {
 }
 
 export const getCategoriesList = () => (dispatch) => {
-  const apiURL = 'https://s3.amazonaws.com/howdoihelp.us/bak/1479660952/entities.json'
+  const apiURL = 'https://s3.amazonaws.com/howdoihelp.us/entities.json'
   fetch(apiURL)
     .then(response => response.json())
     .then(data => {

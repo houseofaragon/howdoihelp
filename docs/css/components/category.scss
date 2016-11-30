@@ -161,46 +161,59 @@ div#shadow-bottom{
   }
 }
 
-.landing-side-grid.visible{
-  right: 0;
+.visible#close{
+  right: 40%;
   transition: right ease 250ms;
-  display: block;
+}
 
+#close{
+  position: absolute;
+  width: 60px;
+  height: 57px;
+  background-color: $light-purple;
+  right: -40%;
+  text-align: center;
+  color: $purple;
+  font-size: 2.3em;
+  font-weight: 200;
+  line-height: 57px;
+  z-index: 104;
+
+  &:hover{
+    color: $white;
+    transition: color 250ms;
+    cursor: pointer;
+  }
+}
+
+.landing-side-grid.visible{
+  right: -60vw;
+  transition: right ease 250ms;
 }
 
 .landing-side-grid{
-  right:-70vw;
+  right:-100vw;
   transition: right ease 250ms;
   width: 40vw;
-  height: 100%;
+  height: 100vh;
   clear: both;
-  padding: 0 $padding * 3;
   box-sizing: border-box;
   overflow-y: auto;
-  position: absolute;
+  overflow-x: auto;
+  position: relative;
   background: $white;
+  z-index: 100;
 
   & #category-list{
     margin-top: $padding * 20;
     padding-bottom: $padding * 6;
+    z-index: 101;
+    padding: 0 $padding * 3;
   }
 
   & .category-div {
       margin-bottom: $padding * 3;
 
-      &:after {
-        border-left: 3px solid $teal;
-        content: '';
-        display: block;
-        position: absolute;
-        top: 80px;
-        left: -10px;
-        width: 0;
-        height: 0;
-        border-color: transparent transparent transparent $purple;
-        border-style: solid;
-        border-width: 10px;
-      }
       & h4{
         display: inline-block;
         padding: $padding 0 0 0;
@@ -257,7 +270,7 @@ div#shadow-bottom{
             vertical-align: middle;
             &#donate { color: $green; }
             &#online { color: $teal; }
-            &#volunteer { color: $pink; }
+            &#in-person { color: $pink; }
           }
         }
       }
@@ -269,27 +282,9 @@ div#shadow-bottom{
     background: $white;
     height: $padding * 19;
     border-bottom: 4px solid $purple;
-    margin-left: -30px;
     text-align: center;
-
-    & #close{
-      position: absolute;
-      width: 60px;
-      height: 57px;
-      background-color: $light-purple;
-      margin-left: -60px;
-      color: $purple;
-      font-size: 2.3em;
-      font-weight: 200;
-      line-height: 57px;
-
-      &:hover{
-        color: $white;
-        transition: color 250ms;
-        cursor: pointer;
-      }
-    }
-
+    z-index: 102;
+    margin: 0 auto;
     & #sub-category-header{
       text-align: center;
       font-weight: 400;
