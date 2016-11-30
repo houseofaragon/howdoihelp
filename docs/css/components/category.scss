@@ -134,7 +134,7 @@ div#shadow-bottom{
         border-radius: 50%;
         z-index: 1000;
         margin-top: -10px;
-        background-image: url('images/logo.png')
+        background-image: url('images/logo.svg')
       }
 
       & h1.landing-header {
@@ -178,13 +178,15 @@ div#shadow-bottom{
 
 .landing-side-grid.visible{
   right: -60vw;
+  -webkit-transition: -webkit-transform right ease 250ms;
+  -moz-transition: right ease 250ms;
+  -o-transition: right ease 250ms;
   transition: right ease 250ms;
 }
 
 .landing-side-grid{
   position: relative;
   right:-100vw;
-  transition: right ease 250ms;
   width: 40vw;
   height: 100vh;
   clear: both;
@@ -204,6 +206,7 @@ div#shadow-bottom{
     height: 65vh;
     overflow: auto;
     overflow-y: scroll;
+    width: auto;
   }
 
   & .category-div {
