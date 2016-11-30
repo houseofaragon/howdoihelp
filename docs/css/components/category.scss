@@ -47,7 +47,7 @@ div#shadow-top{
   left: 420px;
   top: 7.5vh;
   position: fixed;
-  width: 285px;
+  width: 280px;
   height: 300px;
   -webkit-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
   -moz-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
@@ -182,6 +182,7 @@ div#shadow-bottom{
 }
 
 .landing-side-grid{
+  position: relative;
   right:-100vw;
   transition: right ease 250ms;
   width: 40vw;
@@ -190,15 +191,18 @@ div#shadow-bottom{
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: auto;
-  position: relative;
-  background: $white;
   z-index: 100;
 
   & #category-list{
-    margin-top: $padding * 20;
+    top: $padding * 19;
     padding-bottom: $padding * 6;
+    padding: $padding * 3;
+    position: fixed;
     z-index: 101;
-    padding: 0 $padding * 3;
+    background: $white;
+    max-height: 100vh;
+    overflow-y: scroll;
+
   }
 
   & .category-div {
@@ -273,8 +277,9 @@ div#shadow-bottom{
     height: $padding * 19;
     border-bottom: 4px solid $purple;
     text-align: center;
-    z-index: 102;
     margin: 0 auto;
+    z-index: 102;
+
     & #sub-category-header{
       text-align: center;
       font-weight: 400;
