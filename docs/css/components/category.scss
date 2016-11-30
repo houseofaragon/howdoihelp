@@ -45,9 +45,9 @@ div#shadow-top{
   z-index: 2;
   border: none;
   left: 420px;
-  top: 100px;
+  top: 7.5vh;
   position: fixed;
-  width: 300px;
+  width: 285px;
   height: 300px;
   -webkit-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
   -moz-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
@@ -59,9 +59,9 @@ div#shadow-bottom{
   z-index: 2;
   border: none;
   left: 420px;
-  top: 395px;
+  top: 50vh;
   position: fixed;
-  width: 300px;
+  width: 285px;
   height: 280px;
   -webkit-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,1);
   -moz-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,1);
@@ -77,27 +77,18 @@ div#shadow-bottom{
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
-  & .links-box{
-      opacity: 0;
-      height: 0;
-  }
 
   & .links-box.visible {
-    opacity: 1;
     left: 422px;
     width: 90vw;
-    height: 100%;
     overflow-y: scroll;
     background: transparent;
     position: absolute;
-    padding-top: 70px;
+    padding-top: 45vh;
+    padding-bottom: 49.7vh;
 
     & #links {
-      overflow-y: scroll;
-      margin-bottom: -33px;
       text-align: left;
-      padding-top: 290px;
-      padding-bottom: 430px;
 
       width: 100%;
       & .active{
@@ -105,7 +96,6 @@ div#shadow-bottom{
       }
 
       & a{
-        width: 300px;
         z-index: 10;
         font-weight: 700;
         display: block;
