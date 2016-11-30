@@ -4,6 +4,8 @@ import Footer from 'components/Footer'
 const Layout = (props) => (
   <div className='container'>
     <Header />
+    <div id='shadow-top' />
+    <div id='shadow-bottom' />
     {props.children}
     <Footer />
   </div>

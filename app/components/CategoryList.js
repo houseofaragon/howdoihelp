@@ -54,15 +54,16 @@ class CategoryList extends React.Component {
     ))
     return (
       <div>
+
         <div className='landing'>
           <div id='landing-text'>
             <div id='header'>
               <div id="logo-img" />
               <h1 className='landing-header'>howdoihelp</h1>
             </div>
-            <div className={(this.state.showMenu ? 'visible ' : '') + 'links-box'}>
-              <hr id='shadow-top' />
-              <hr id='shadow-bottom' />
+            <div className='mouse-icon'><div className='wheel'></div></div>
+          </div>
+          <div className={(this.state.showMenu ? 'visible ' : '') + 'links-box'}>
               <div id='links'>
                 <a className={this.isActive('government')} onClick={this.handleCategoryClick.bind(this)} data-tag='government'>us</a>
                 <a className={this.isActive('climate change')} onClick={this.handleCategoryClick.bind(this)} data-tag='climate change'> climatechange</a>
@@ -73,9 +74,6 @@ class CategoryList extends React.Component {
                 <a className={this.isActive('all')} onClick={this.handleCategoryClick.bind(this)} data-tag='all'> all</a>
               </div>
             </div>
-            <div className='mouse-icon'><div className='wheel'></div></div>
-
-          </div>
         </div>
         <div className={(this.state.visible ? "visible " : "") + 'landing-side-grid'}>
           <SubCategoryList closeSideBar={this.closeSideBar.bind(this)} onSubCategoryClick={this.handleSubCategoryClick.bind(this)}/>

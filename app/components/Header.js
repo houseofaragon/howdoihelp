@@ -34,12 +34,12 @@ class Header extends React.Component {
           <a target="_blank" href='https://www.twitter.com/howdoihelpus/'>
             <div className='dot yellow' />
             <div className='social' id='twitter' alt='howdoihelpus-twitter' />twitter</a>
-          <a target="_blank" href='mailto:howdoihelpus@gmail.com'>
-            <div className='dot orange' />
-            <div href='https://twitter.com/howdoihelpus' className='social' id='email' alt='howdoihelpus-email' />contact</a>
           <a target="_blank" href=''>
             <div className='dot pink' />
             <div href='' className= 'social' id='share' alt='howdoihelpus-share' />share</a>
+          <a target="_blank" href='mailto:'>
+            <div className='dot orange' />
+            <div href='https://twitter.com/howdoihelpus' className='social' id='email' alt='howdoihelpus-email' />howdoihelpus@gmail.com</a>
         </div>
 
       </div>

@@ -41,101 +41,100 @@
   }
 }
 
+div#shadow-top{
+  z-index: 2;
+  border: none;
+  left: 420px;
+  top: 100px;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  -webkit-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
+  -moz-box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
+  box-shadow: inset 2px 200px 205px -30px rgba(104,34,139,1);
+  pointer-events: none;
+}
+
+div#shadow-bottom{
+  z-index: 2;
+  border: none;
+  left: 420px;
+  top: 395px;
+  position: fixed;
+  width: 300px;
+  height: 280px;
+  -webkit-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,1);
+  -moz-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,1);
+  box-shadow: inset 2px -200px 205px -30px rgba(104,34,139,1);
+  pointer-events: none;
+}
+
 .landing {
   background: $purple; /* fallback for old browsers */
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  overflow-y: hidden;
-  overflow-x: hidden;
   position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  & .links-box{
+      opacity: 0;
+      height: 0;
+  }
+
+  & .links-box.visible {
+    opacity: 1;
+    left: 422px;
+    width: 90vw;
+    height: 100%;
+    overflow-y: scroll;
+    background: transparent;
+    position: absolute;
+    padding-top: 70px;
+
+    & #links {
+      overflow-y: scroll;
+      margin-bottom: -33px;
+      text-align: left;
+      padding-top: 290px;
+      padding-bottom: 430px;
+
+      width: 100%;
+      & .active{
+        color: $white;
+      }
+
+      & a{
+        width: 300px;
+        z-index: 10;
+        font-weight: 700;
+        display: block;
+        font-size: 2.3em;
+        color: $light-purple;
+        letter-spacing: 1px;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+  }
 
   & #landing-text{
-    position: absolute;
+    position: fixed;
     left: $padding * 4;
     top: 40vh;
     color: $white;
     z-index: 1;
     width: 100vw;
 
-    & .links-box{
-      opacity: 0;
-      height: 0;
-    }
-
-    & .links-box.visible {
-      opacity: 1;
-      position: absolute;
-      left: 385px;
-      width: 90vw;
-      height: 300px;
-      top: -378px;
-      overflow: auto;
-      background: transparent;
-      position: absolute;
-      padding-top: 128px;
-      padding-bottom: 500px;
-
-
-      & hr#shadow-top{
-        z-index: 100;
-        border: none;
-        left: 420px;
-        top: 0;
-        position: fixed;
-        width: 300px;
-        height: 350px;
-        -webkit-box-shadow: inset 2px 200px 205px -20px rgba(104,34,139,1);
-        -moz-box-shadow: inset 2px 200px 205px -2px rgba(104,34,139,1);
-        box-shadow: inset 2px 200px 205px -20px rgba(104,34,139,1);
-      }
-
-      & hr#shadow-bottom{
-        z-index: 100;
-        border: none;
-        left: 420px;
-        top: 510px;
-        position: fixed;
-        width: 300px;
-        height: 150px;
-        -webkit-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
-        -moz-box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
-        box-shadow: inset 2px -200px 205px -7px rgba(104,34,139,0.9);
-      }
-
-      & #links {
-        overflow-y: scroll;
-        margin-bottom: -33px;
-        text-align: left;
-        padding-top: 290px;
-        width: 100%;
-        & .active{
-          color: $white;
-        }
-
-        & a{
-          width: 300px;
-          z-index: 10;
-          font-weight: 700;
-          display: block;
-          font-size: 2.3em;
-          color: $light-purple;
-          letter-spacing: 1px;
-
-          &:hover{
-            cursor: pointer;
-          }
-        }
-      }
-
-      ::-webkit-scrollbar {
-          display: none;
-      }
-    }
-
     & #header {
       height: 120px;
-      position: relative;
+      position: absolute;
 
       & div#logo-img {
         width: 144px;
@@ -160,13 +159,6 @@
       }
     }
   }
-
-  & #fillgauge{
-    width:100%;
-    height:400px;
-    position: absolute;
-    top: 30vh;
-  }
 }
 
 .landing-side-grid.visible{
@@ -187,7 +179,6 @@
   overflow-y: auto;
   position: absolute;
   background: $white;
-
 
   & #category-list{
     margin-top: $padding * 20;
@@ -271,8 +262,6 @@
         }
       }
   }
-
-
 
   & #sub-category-list {
     position: fixed;
