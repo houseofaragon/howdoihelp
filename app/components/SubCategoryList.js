@@ -21,9 +21,9 @@ class SubCategoryList extends React.Component {
       <div id='sub-category-list'>
         <h2 id="sub-category-header"> 3 WAYS YOU CAN HELP </h2>
         <hr />
-        <button className={this.isActive('in-person')}> <span className='action in-person' onClick={this.onSubCategoryClick.bind(this)} data-id="in-person"></span>In Person</button>
-        <button className={this.isActive('donate')}> <span className='action donate' onClick={this.onSubCategoryClick.bind(this)} data-id="donate"></span> Donate</button>
-        <button className={this.isActive('online')}> <span className='action online' onClick={this.onSubCategoryClick.bind(this)} data-id="online"></span> Online</button>
+        <button className={this.isActive('in-person')} onClick={this.onSubCategoryClick.bind(this)} data-id="in-person"> <span className='action in-person' onClick={this.onSubCategoryClick.bind(this)} data-id="in-person"></span>In Person</button>
+        <button className={this.isActive('donate')} onClick={this.onSubCategoryClick.bind(this)} data-id="donate"> <span className='action donate' onClick={this.onSubCategoryClick.bind(this)} data-id="donate"></span> Donate</button>
+        <button className={this.isActive('online')} onClick={this.onSubCategoryClick.bind(this)} data-id="online"> <span className='action online' onClick={this.onSubCategoryClick.bind(this)} data-id="online"></span> Online</button>
         <button onClick={this.onSubCategoryClick.bind(this)} data-id="all"> &#10005; Remove</button>
       </div>
     )

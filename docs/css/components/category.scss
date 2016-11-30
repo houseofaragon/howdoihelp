@@ -192,6 +192,7 @@ div#shadow-bottom{
   overflow-y: auto;
   overflow-x: auto;
   z-index: 100;
+  background: $white;
 
   & #category-list{
     top: $padding * 19;
@@ -201,8 +202,8 @@ div#shadow-bottom{
     z-index: 101;
     background: $white;
     max-height: 100vh;
+    overflow: auto;
     overflow-y: scroll;
-
   }
 
   & .category-div {
@@ -274,7 +275,7 @@ div#shadow-bottom{
     position: fixed;
     width: 40vw;
     background: $white;
-    height: $padding * 19;
+    height: $padding * 18;
     border-bottom: 4px solid $purple;
     text-align: center;
     margin: 0 auto;
@@ -288,6 +289,7 @@ div#shadow-bottom{
 
     & hr {
         border: 2px solid $purple;
+        margin: 0;
     }
 
     & button{
