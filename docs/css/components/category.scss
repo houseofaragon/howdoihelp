@@ -127,14 +127,11 @@ div#shadow-bottom{
       position: absolute;
 
       & div#logo-img {
-        width: 144px;
-        height: 144px;
         display:inline-block;
         border: none;
         border-radius: 50%;
         z-index: 1000;
         margin-top: -10px;
-        background-image: url('images/logo.svg')
       }
 
       & h1.landing-header {
