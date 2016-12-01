@@ -24,7 +24,7 @@ class SubCategoryList extends React.Component {
         <button className={this.isActive('in-person')} onClick={this.onSubCategoryClick.bind(this)} data-id="in-person"> <span className='action in-person' onClick={this.onSubCategoryClick.bind(this)} data-id="in-person"></span>In Person</button>
         <button className={this.isActive('donate')} onClick={this.onSubCategoryClick.bind(this)} data-id="donate"> <span className='action donate' onClick={this.onSubCategoryClick.bind(this)} data-id="donate"></span> Donate</button>
         <button className={this.isActive('online')} onClick={this.onSubCategoryClick.bind(this)} data-id="online"> <span className='action online' onClick={this.onSubCategoryClick.bind(this)} data-id="online"></span> Online</button>
-        <button onClick={this.onSubCategoryClick.bind(this)} data-id="all"> &#10005; Remove</button>
+        <button onClick={this.onSubCategoryClick.bind(this)} data-id="all"> &#10005; Clear</button>
       </div>
     )
   }

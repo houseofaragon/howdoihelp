@@ -60,10 +60,10 @@ class CategoryList extends React.Component {
           <div id='landing-text'>
             <div id='header'>
               <div id="logo-img">
-                <svg version="1.1" id="Layer_1" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 94.5 92.5" enable-background="new 0 0 94.5 92.5">
+                <svg version="1.1" id="Layer_1" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 94.5 92.5" enableBackground="new 0 0 94.5 92.5">
                   <g><g><path fill="#FFFFFF" d="M39.786,23.172h14.629v14.629h14.622v14.621H54.415v14.623H39.786V52.422H25.164V37.801h14.622V23.172z"/></g>
                     <polygon fill="#FFFFFF" points="66.187,57.367 66.189,32.85 78.447,45.109  "/></g>
-                  <circle fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" cx="47.85" cy="46.107" r="42.264"/>
+                  <circle fill="none" stroke="#FFFFFF" strokeWidth="5" strokeMiterLimit="10" cx="47.85" cy="46.107" r="42.264"/>
                 </svg>
               </div>
               <h1 className='landing-header'>howdoihelp</h1>
