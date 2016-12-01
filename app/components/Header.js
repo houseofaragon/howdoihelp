@@ -37,6 +37,9 @@ class Header extends React.Component {
           <a target="_blank" href='http://www.facebook.com/sharer.php?u=http://howdoihelp.us'>
             <div className='dot pink' />
             <div className= 'social' id='share' alt='howdoihelpus-share' />share</a>
+          <a target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLScONOA_hSg3cPo-rkFruIEfId4K19cHZ5j9kLM-9Rx_8MLFnQ/viewform'>
+            <div className='dot light-grey' />
+            <div className= 'social' id='submit' alt='howdoihelpus-submit' />submit a way to help</a>
           <a target="_blank" href='mailto:'>
             <div className='dot orange' />
             <div href='https://twitter.com/howdoihelpus' className='social' id='email' alt='howdoihelpus-email' />howdoihelpus@gmail.com</a>
