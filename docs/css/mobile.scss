@@ -36,7 +36,7 @@
       z-index: 100;
       margin-top: 65px;
       padding: 20px 30px 50px 20px;
-      height: 30vh;
+      height: 20vh;
       margin-left: 0;
       width: 100vw;
     }
@@ -56,6 +56,11 @@
    margin: 0;
   }
 
+  .mouse-icon {
+    top: 9vh;
+    left: 75vw;
+    z-index: 1000000;
+  }
   .landing{
     position: relative;
     overflow: auto;
@@ -78,6 +83,7 @@
         top: 7vh;
         padding: 0;
         margin: 0;
+        height: 55px;
         left: $padding * 6.1;
         overflow: auto;
         & #links{
@@ -88,25 +94,22 @@
 
   .landing-side-grid {
     left: 0;
-    width: 100vw;
     position: fixed;
     top: 15vh;
     display: block;
+    width: 100vw;
+
     & #category-list{
-        width: 100vw;
         padding: $padding;
         top: 22vh;
     }
 
     & .category-div {
-        width: 100vw;
         margin-bottom: $padding * 2;
-        margin-right: $padding*6;
 
         & h4 { max-width: 100%; font-size: 1em}
         & .category-description {
             font-size: 0.9em;
-            width: 100vw;
         }
     }
 
@@ -139,14 +142,14 @@
 
   .landing-side-grid.visible {
     left: 0;
-    width: 100vw;
     position: fixed;
     top: 15vh;
     display: block;
+    width: 100vw;
     & #category-list{
-        width: 100vw;
         padding: $padding;
-        top: 22vh;
+        top: 5vh;
+        position: absolute;
     }
 
     & .category-div {
