@@ -34,9 +34,9 @@
     & .visible.menu{
       background: $purple;
       z-index: 100;
-      margin-top: 65px;
+      margin-top: 45px;
       padding: 20px 30px 50px 20px;
-      height: 20vh;
+      height: 30vh;
       margin-left: 0;
       width: 100vw;
     }
@@ -57,8 +57,8 @@
   }
 
   .mouse-icon {
-    top: 9vh;
-    left: 75vw;
+    top: 10vh;
+    left: 78vw;
     z-index: 1000000;
   }
   .landing{
@@ -80,14 +80,16 @@
     }
 
     & .links-box.visible{
-        top: 7vh;
+        top: 8vh;
         padding: 0;
         margin: 0;
-        height: 55px;
+
         left: $padding * 6.1;
         overflow: auto;
+        height: 65px;
+
         & #links{
-         & a { font-size: 1.6em;}
+         & a { font-size: 1.8em;}
         }
     }
   } /* end landing */
@@ -95,18 +97,17 @@
   .landing-side-grid {
     left: 0;
     position: fixed;
-    top: 15vh;
+    top: 19vh;
     display: block;
     width: 100vw;
 
     & #category-list{
         padding: $padding;
-        top: 22vh;
+        top: 25vh;
     }
 
     & .category-div {
         margin-bottom: $padding * 2;
-
         & h4 { max-width: 100%; font-size: 1em}
         & .category-description {
             font-size: 0.9em;
@@ -116,6 +117,7 @@
     & #sub-category-list {
       width: 100vw;
       height: auto;
+      position: absolute;
 
       & #sub-category-header{ display: none }
 
@@ -143,9 +145,10 @@
   .landing-side-grid.visible {
     left: 0;
     position: fixed;
-    top: 15vh;
+    top: 19vh;
     display: block;
     width: 100vw;
+
     & #category-list{
         padding: $padding;
         top: 5vh;
@@ -164,7 +167,7 @@
     & #sub-category-list {
       width: 100vw;
       height: auto;
-
+      position: absolute;
       & #sub-category-header{ display: none }
 
       & button span.action{
@@ -221,114 +224,7 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  .header{
-    position: fixed;
-    z-index: 11;
-    width: 0;
-    & h1.landing-logo{
-      height: 18px;
-      top: $padding * 2;
-      left: $padding * 2;
-    }
-  }
-  .landing {
-    width: 40vw;
 
-    & #landing-text{
-      z-index:20;
-      top: 0;
-      left: $padding;
-      height: 100vh;
-
-
-      & .links-box.visible {
-        left: $padding;
-        position: absolute;
-        padding: 0;
-        top: 80px;
-
-        & #links {
-          padding: 0; margin: 0;
-          & a {font-size: 1em;}  }
-          & hr{ display: none;}
-        }
-
-      & #header {
-
-        & div#logo-img{ display: none}
-        & h1.landing-header {
-          font-size: 1em;
-          height: 40px;
-          line-height: 40px;
-          left: $padding * 3;
-          top: $padding;
-        }
-      }
-
-      & #add-organization{
-        font-size: 0.6em;
-        border: none;
-        background: $light-purple;
-        width: 80%;
-        border-radius: $padding;
-      }
-    }
-  }
-
-  .landing-side-grid {
-    right: 0;
-    display: block;
-    width: 60vw;
-    & .category-div {
-      & h4 { max-width: 100vw; }
-    }
-    & .category-header {
-      display: none;
-    }
-
-    & #category-list { margin-top: $padding * 6; }
-
-    & #sub-category-list {
-      width: 60vw;
-      height: auto;
-      margin-top: 0;
-
-      & #close{
-        display: none;
-      }
-
-      & hr{ padding: 0; margin:0}
-      & h2 {
-        display: none;
-      }
-      & button{
-        padding: 0;
-        & span.action {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-    & .category-div {
-      & h4 {
-        font-size: 0.9em;
-        margin: 0;
-      }
-      & .category-description{
-        font-size: 0.7em;
-      }
-      & .category-links {
-        border-radius: 10px;
-        display: inline-block;
-        border: none;
-        border-radius: 15px;
-        margin-top: $padding/2;
-        color: $light-purple;
-
-        & a { font-size: 0.5em;}
-      }
-    }
-  }
 }
 
 /* ----------- iPhone 6 ----------- */
@@ -356,111 +252,7 @@
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  .header{
-    position: fixed;
-    z-index: 11;
-    width: 0;
-    & h1.landing-logo{
-      height: 18px;
-      top: $padding * 2;
-      left: $padding * 2;
-    }
-  }
-  .landing {
-    width: 40vw;
 
-    & #landing-text{
-      z-index:20;
-      top: 0;
-      left: $padding;
-      height: 100vh;
-
-
-      & .links-box.visible {
-        left: $padding;
-        position: absolute;
-        padding: 0;
-        top: 80px;
-
-        & #links {
-          padding: 0; margin: 0;
-          & a {font-size: 1em;}  }
-          & hr{ display: none;}
-        }
-      & #header {
-
-        & div#logo-img{ display: none}
-        & h1.landing-header {
-          font-size: 1em;
-          height: 40px;
-          line-height: 40px;
-          left: $padding * 3;
-          top: $padding;
-        }
-      }
-
-      & #add-organization{
-        font-size: 0.6em;
-        border: none;
-        background: $light-purple;
-        width: 80%;
-        border-radius: $padding;
-      }
-    }
-  }
-
-  .landing-side-grid.visible {
-    width: 60vw;
-    & .category-div {
-      & h4 { max-width: 100vw; }
-    }
-    & .category-header {
-      display: none;
-    }
-
-    & #category-list { margin-top: $padding * 6; }
-
-    & #sub-category-list {
-      width: 60vw;
-      height: auto;
-      margin-top: 0;
-
-      & #close{
-        display: none;
-      }
-
-      & hr{ padding: 0; margin:0}
-      & h2 {
-        display: none;
-      }
-      & button{
-        padding: 0;
-        & span.action {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-    & .category-div {
-      & h4 {
-        font-size: 0.9em;
-        margin: 0;
-      }
-      & .category-description{
-        font-size: 0.7em;
-      }
-      & .category-links {
-        border-radius: 10px;
-        display: inline-block;
-        border: none;
-        border-radius: 15px;
-        margin-top: $padding/2;
-        color: $light-purple;
-
-        & a { font-size: 0.5em;}
-      }
-    }
-  }
 }
 
 /* ----------- iPhone 6+ ----------- */
@@ -488,111 +280,7 @@
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  .header{
-    position: fixed;
-    z-index: 11;
-    width: 0;
-    & h1.landing-logo{
-      height: 18px;
-      top: $padding * 2;
-      left: $padding * 2;
-    }
-  }
-  .landing {
-    width: 40vw;
 
-    & #landing-text{
-      z-index:20;
-      top: 0;
-      left: $padding;
-      height: 100vh;
-
-
-      & .links-box.visible {
-        left: $padding;
-        position: absolute;
-        padding: 0;
-        top: 80px;
-
-        & #links {
-          padding: 0; margin: 0;
-          & a {font-size: 1em;}  }
-          & hr{ display: none;}
-        }
-      & #header {
-
-        & div#logo-img{ display: none}
-        & h1.landing-header {
-          font-size: 1em;
-          height: 40px;
-          line-height: 40px;
-          left: $padding * 3;
-          top: $padding;
-        }
-      }
-
-      & #add-organization{
-        font-size: 0.6em;
-        border: none;
-        background: $light-purple;
-        width: 80%;
-        border-radius: $padding;
-      }
-    }
-  }
-
-  .landing-side-grid.visible {
-    width: 60vw;
-    & .category-div {
-      & h4 { max-width: 100vw; }
-    }
-    & .category-header {
-      display: none;
-    }
-
-    & #category-list { margin-top: $padding * 6; }
-
-    & #sub-category-list {
-      width: 60vw;
-      height: auto;
-      margin-top: 0;
-
-      & #close{
-        display: none;
-      }
-
-      & hr{ padding: 0; margin:0}
-      & h2 {
-        display: none;
-      }
-      & button{
-        padding: 0;
-        & span.action {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-    & .category-div {
-      & h4 {
-        font-size: 0.9em;
-        margin: 0;
-      }
-      & .category-description{
-        font-size: 0.7em;
-      }
-      & .category-links {
-        border-radius: 10px;
-        display: inline-block;
-        border: none;
-        border-radius: 15px;
-        margin-top: $padding/2;
-        color: $light-purple;
-
-        & a { font-size: 0.5em;}
-      }
-    }
-  }
 }
 
 /* ----------- Galaxy S3 ----------- */
