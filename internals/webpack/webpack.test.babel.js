@@ -32,7 +32,7 @@ module.exports = {
         exclude: [/node_modules/],
       },
       { test: /\.jpe?g$|\.gif$|\.png$|\.svg$/i,
-        loader: 'null-loader',
+        loader: 'file-loader',
       },
     ],
   },

@@ -36,8 +36,8 @@ module.exports = (options) => ({
     }, {
       test: /\.(jpg|png|gif|svg)$/,
       loaders: [
-        'file-loader',
-        'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+        'url-loader?limit=100000000000000',
+        'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
       ],
     }, {
       test: /\.html$/,

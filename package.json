@@ -1,15 +1,15 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.3.3",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "howdoihelp",
+  "version": "1.0.0",
+  "description": "howdoihelp.us is a website that aggregates and organizes projects that help preserve and progress the state of the nation on a local, national, and global scale.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "https://github.com/houseofaragon/howdoihelp"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
+  "author": "Karen C. Aragon",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
