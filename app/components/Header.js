@@ -22,7 +22,9 @@ class Header extends React.Component {
     (location.pathname === '/about' ? path= <Link to={'/'}><div className='dot blue' />home </Link> : path= <Link to={'/about'}><div className='dot blue' />about </Link>)
     return (
       <div className='header'>
-        <h1 className='landing-logo' onClick={this.handleLogoClick.bind(this)}></h1>
+        <div className='landing-logo' onClick={this.handleLogoClick.bind(this)}>
+          <img src={require('../../docs/css/images/hamburger-white.png')} />
+        </div>
         <div className={(this.state.menuVisible ? "visible " : "") + 'menu'}>
           {path}
           <a target="_blank" href='https://instagram.com/howdoihelpus'>

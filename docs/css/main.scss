@@ -36,10 +36,6 @@ p{
   font-size: 1em;
 }
 
-.container{
-  margin: 0 auto;
-}
-
 a{
   color: $purple;
   text-decoration: none;
@@ -50,8 +46,8 @@ a{
   }
 }
 
-
 .container{
+  margin: 0 auto;
   background: $purple;
   color: $purple;
   min-height: 100vh;

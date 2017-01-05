@@ -7,7 +7,7 @@
 
   p { color: $white; }
 
-  & h1.landing-logo {
+  & div.landing-logo img {
     color: $light-pink;
     position: absolute;
     top: $padding * 4;
@@ -15,7 +15,7 @@
     font-weight: 700;
     height: 18px;
     width: 20px;
-    background-image: url('images/hamburger-white.png');
+    background-image: url('/howdoihelp/images/hamburger-white.png');
 
     &:hover{
       cursor: pointer;

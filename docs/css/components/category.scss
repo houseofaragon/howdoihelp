@@ -275,7 +275,7 @@ div#shadow-bottom{
     position: fixed;
     width: 40vw;
     background: $white;
-    height: $padding * 18;
+    height: 177px;
     border-bottom: 4px solid $purple;
     text-align: center;
     margin: 0 auto;
@@ -294,14 +294,8 @@ div#shadow-bottom{
 
     & button{
       display: inline-block;
-    }
-
-
-
-    & button {
       background-color: transparent;
       border: none;
-      margin-right: $padding;
       color: $light-purple;
 
       &.active{
@@ -316,25 +310,24 @@ div#shadow-bottom{
         transition: background-color 250ms, color 250ms;
       }
 
-      & span.action {
+      & span.action,  span.action img{
         width: 80px;
         height: 80px;
         margin-right: $padding/2;
         margin-top: 3px;
         display: block;
-
-        &.in-person{
-          background-image: url('images/inperson-color.png')
-        }
-        &.donate{
-          background-image: url('images/donate-color.png')
-        }
-        &.online{
-          background-image: url('images/online-color.png')
-        }
       }
 
-
+      &#clear{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: $padding;
+        &:hover{
+          color: $purple;
+          background: none;
+        }
+      }
     }
   }
 }
