@@ -65,6 +65,11 @@ module.exports = (options) => ({
       },
     }),
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity,
+      filename: 'vendor.app.js'
+    })
   ]),
   resolve: {
     modules: ['app', 'node_modules'],
